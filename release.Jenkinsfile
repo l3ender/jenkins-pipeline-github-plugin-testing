@@ -8,10 +8,10 @@ pipeline {
             steps {
                 script {
                     sh 'printenv'
-                    if (env.CHANGE_ID) {
-                        echo "change ID: ${env.CHANGE_ID}"
+                    if (env.mergedPullRequest) {
+                        echo "PR was merged: $mergedPullRequest.number"
                     } else {
-                        echo 'no change ID!'
+                        echo 'no PR'
                     }
                 }
             }
