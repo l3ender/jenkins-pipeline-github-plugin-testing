@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     sh 'printenv'
-                    if (env.mergedPullRequest) {
+                    if (mergedPullRequest) {
                         echo "PR was merged: $mergedPullRequest.number"
                     } else {
                         echo 'no PR'
