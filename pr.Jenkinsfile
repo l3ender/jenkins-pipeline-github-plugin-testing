@@ -10,6 +10,7 @@ pipeline {
                     echo "pr detected? $env.CHANGE_ID"
                     if (env.CHANGE_ID) {
                         echo "PR: $pullRequest.number"
+                        echo "PR: $pullRequest.url"
                     } else {
                         echo 'no PR'
                     }
