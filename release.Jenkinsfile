@@ -7,7 +7,6 @@ pipeline {
         stage('Initialize') {
             steps {
                 script {
-                    sh 'printenv'
                     if (mergedPullRequest.exists) {
                         echo "PR was merged: $mergedPullRequest.number"
                     } else {
