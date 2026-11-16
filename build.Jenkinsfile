@@ -22,7 +22,7 @@ pipeline {
                     echo "owner: $repository.owner"
                     echo "defaultBranch: $repository.defaultBranch"
                     echo "description: $repository.description"
-                    echo "url: $repository.url"
+                    echo "htmlUrl: $repository.htmlUrl"
                     echo "cloneUrl: $repository.cloneUrl"
                     echo "sshUrl: $repository.sshUrl"
                     echo "gitUrl: $repository.gitUrl"
