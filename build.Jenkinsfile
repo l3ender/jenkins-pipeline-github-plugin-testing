@@ -26,7 +26,7 @@ pipeline {
                     echo "cloneUrl: $repository.cloneUrl"
                     echo "sshUrl: $repository.sshUrl"
                     echo "gitUrl: $repository.gitUrl"
-                    echo "private: $repository.private"
+                    echo "private: ${repository.isPrivate()}"
                     echo "fork: $repository.fork"
                     echo "stargazersCount: $repository.stargazersCount"
                     echo "forksCount: $repository.forksCount"
