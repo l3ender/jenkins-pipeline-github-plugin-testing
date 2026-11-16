@@ -31,7 +31,6 @@ pipeline {
                     echo "stargazersCount: $repository.stargazersCount"
                     echo "forksCount: $repository.forksCount"
                     echo "openIssuesCount: $repository.openIssuesCount"
-                    echo "language: $repository.language"
                     echo "id: $repository.id"
                 }
             }
