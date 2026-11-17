@@ -12,10 +12,9 @@ pipeline {
                     } else {
                         echo "Build running for branch: $env.BRANCH_NAME"
                     }
-                    if (mergedPullRequest.exists) {
-                        echo "Merged PR detected: $mergedPullRequest.number"
-                    } else {
-                        echo 'No merged PR detected'
+                    sleep 30
+                    if (env.CHANGE_ID) {
+                        pullRequest.comment('test')
                     }
                 }
             }
