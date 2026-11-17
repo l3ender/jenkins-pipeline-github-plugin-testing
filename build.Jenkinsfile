@@ -14,7 +14,8 @@ pipeline {
                     }
                     sleep 30
                     if (env.CHANGE_ID) {
-                        pullRequest.comment('test')
+                        echo "adding comment to PR"
+                        pullRequest.comment("Build ran at ${new Date().format('yyyy-MM-dd HH:mm:ss z')}")
                     }
                 }
             }
