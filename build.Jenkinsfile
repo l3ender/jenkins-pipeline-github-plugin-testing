@@ -8,14 +8,13 @@ pipeline {
             steps {
                 script {
                     if (env.CHANGE_ID) {
-                        echo "Build running for PR $pullRequest.number: $pullRequest.url"
-                    } else {
-                        echo "Build running for branch: $env.BRANCH_NAME"
+                        echo "adding comment to PR before sleep"
+                        pullRequest.comment("Comment before sleep: ${new Date().format('yyyy-MM-dd HH:mm:ss z')}")
                     }
                     sleep 30
                     if (env.CHANGE_ID) {
-                        echo "adding comment to PR"
-                        pullRequest.comment("Build ran at ${new Date().format('yyyy-MM-dd HH:mm:ss z')}")
+                        echo "adding comment to PR after sleep"
+                        pullRequest.comment("Comment after sleep: ${new Date().format('yyyy-MM-dd HH:mm:ss z')}")
                     }
                 }
             }
