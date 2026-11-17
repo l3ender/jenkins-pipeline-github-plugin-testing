@@ -7,16 +7,18 @@ pipeline {
         stage('Initialize') {
             steps {
                 script {
-                    if (env.CHANGE_ID) {
-                        echo "Build running for PR $pullRequest.number: $pullRequest.url"
-                    } else {
-                        echo "Build running for branch: $env.BRANCH_NAME"
-                    }
-                    if (mergedPullRequest.exists) {
-                        echo "Merged PR detected: $mergedPullRequest.number"
-                    } else {
-                        echo 'No merged PR detected'
-                    }
+                    echo "printing repo properties"
+                    echo "name: $repository.name"
+                    echo "owner: $repository.owner"
+                    echo "defaultBranch: $repository.defaultBranch"
+                    echo "description: $repository.description"
+                    echo "htmlUrl: $repository.htmlUrl"
+                    echo "cloneUrl: $repository.cloneUrl"
+                    echo "sshUrl: $repository.sshUrl"
+                    echo "gitUrl: $repository.gitUrl"
+                    echo "private: ${repository.isPrivate()}"
+                    echo "fork: $repository.fork"
+                    echo "id: $repository.id"
                 }
             }
         }
